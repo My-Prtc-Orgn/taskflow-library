@@ -18,6 +18,14 @@ class Task {
         }
     }
 
+    // В src/task.js добавить
+    this.labels = [];
+
+    addLabel(label) {
+    if (label && !this.labels.includes(label)) {
+        this.labels.push(label);
+    }
+ }
     setPriority(priority) {
     const validPriorities = ['low', 'medium', 'high', 'urgent'];
     if (priority && typeof priority === 'string') {
