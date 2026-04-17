@@ -18,12 +18,14 @@ class Task {
         }
     }
 
-    // Новый метод
     setPriority(priority) {
     const validPriorities = ['low', 'medium', 'high', 'urgent'];
-    if (validPriorities.includes(priority)) {
-        this.priority = priority;
-        return true;
+    if (priority && typeof priority === 'string') {
+        const normalized = priority.toLowerCase();
+        if (validPriorities.includes(normalized)) {
+            this.priority = normalized;
+            return true;
+        }
     }
     return false;
  }
